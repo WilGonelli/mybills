@@ -14,12 +14,15 @@ const Login = () => {
         // onChangeText={(newText) => setText(newText)}
         style={styles.userInput}
         placeholder="Usuario"
+        textContentType="nickname"
       />
       <TextInput
         // value={text}
         // onChangeText={(newText) => setText(newText)}
+        textContentType="password"
         style={styles.userInput}
         placeholder="Senha"
+        secureTextEntry
       />
       <TouchableOpacity style={styles.singinButton}>
         <Text style={styles.signinText}>Cadastre-se</Text>

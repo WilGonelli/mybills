@@ -13,18 +13,23 @@ const Signin = () => {
         // onChangeText={(newText) => setText(newText)}
         style={styles.userInput}
         placeholder="Usuario"
+        textContentType="nickname"
       />
       <TextInput
         // value={text}
         // onChangeText={(newText) => setText(newText)}
         style={styles.userInput}
         placeholder="Senha"
+        textContentType="password"
+        secureTextEntry
       />
       <TextInput
         // value={text}
         // onChangeText={(newText) => setText(newText)}
         style={styles.userInput}
         placeholder="Corfime a Senha"
+        textContentType="password"
+        secureTextEntry
       />
 
       <TouchableOpacity style={styles.loginButton}>
