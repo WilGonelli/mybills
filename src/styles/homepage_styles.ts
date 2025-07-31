@@ -33,4 +33,40 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     color: "white",
   },
+  containerBills: {
+    width: "100%",
+    justifyContent: "space-between",
+    height: "80%",
+    borderRadius: 18,
+    padding: 12,
+    backgroundColor: "#769be0ff",
+  },
+  containerHeader: {
+    flexDirection: "row",
+  },
+  headerText: {
+    fontSize: 24,
+    height: 35,
+    borderBottomWidth: 3,
+    paddingHorizontal: 6,
+    marginBottom: 12,
+  },
+  textBills: {
+    fontSize: 22,
+    padding: 6,
+  },
+  containerTotal: {
+    width: "100%",
+    height: 40,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderTopWidth: 3,
+  },
+  totalText: {
+    marginLeft: 24,
+    fontSize: 24,
+    paddingHorizontal: 12,
+    fontWeight: "bold",
+  },
 });
