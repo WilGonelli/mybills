@@ -1,44 +1,55 @@
-import { BillPaid, Bills, MonthNames } from "../models/billsModel";
+import { Bills_instaces, Bills, Month_names } from "../models/billsModel";
 
 export const BillsMocked: Bills[] = [
   {
     id: 1,
     billName: "agua",
-    dueDate: 12,
-    estimatedValue: 50,
+    due_day: 12,
+    type: "fixed",
+    start_month: "2025-06",
+    end_month: null,
+    created_at: "2025-06-10",
   },
   {
     id: 2,
     billName: "luz",
-    dueDate: 8,
-    estimatedValue: 180,
+    due_day: 8,
+    type: "fixed",
+    start_month: "2025-06",
+    end_month: null,
+    created_at: "2025-06-10",
   },
   {
     id: 3,
     billName: "internet",
-    dueDate: 20,
-    estimatedValue: 119.9,
+    due_day: 20,
+    type: "fixed",
+    start_month: "2025-06",
+    end_month: null,
+    created_at: "2025-06-10",
   },
 ];
 
-export const BillsPaidMocked: BillPaid[] = [
+export const BillsPaidMocked: Bills_instaces[] = [
   {
     id: 1,
-    idBill: 1,
-    paidDate: 20,
-    paidMonth: 6,
-    valuePaid: 46.5,
+    bill_id: 1,
+    due_date: "2025-06-10",
+    amount_paid: null,
+    paid: false,
+    paid_at: null,
   },
   {
     id: 2,
-    idBill: 1,
-    paidDate: 20,
-    paidMonth: 7,
-    valuePaid: 48.5,
+    bill_id: 1,
+    due_date: "2025-06-10",
+    amount_paid: null,
+    paid: false,
+    paid_at: null,
   },
 ];
 
-export const months: MonthNames[] = [
+export const months: Month_names[] = [
   {
     id: 1,
     name: "janeiro",

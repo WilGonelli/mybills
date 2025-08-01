@@ -1,24 +1,33 @@
 import { Text, View, FlatList } from "react-native";
 import { styles } from "../styles/homepage_styles";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-import { BillsMocked, months, BillsPaidMocked } from "../mocks/bills";
-import { BillPaid } from "../models/billsModel";
+import { months } from "../mocks/bills";
+import { useBills } from "../viewmodels/billsViewModel";
 
 const HomePage = () => {
+  const { bills } = useBills();
+  console.log(bills);
   const month = 7;
   const renderItem = ({ item }: any) => {
-    const paidBill: BillPaid[] = BillsPaidMocked.filter(
-      (bill) => bill.idBill === item.id && bill.paidMonth === month
-    );
-    console.log(paidBill);
     return (
       <View style={styles.containerHeader}>
+        <BouncyCheckbox
+          size={25}
+          fillColor="blue"
+          unFillColor="#ffffff"
+          iconStyle={{ borderColor: "blue" }}
+          innerIconStyle={{ borderWidth: 2 }}
+          onPress={(isChecked: boolean) => {
+            console.log(isChecked);
+          }}
+        />
         <Text
           style={[
             styles.textBills,
-            { width: 170 },
-            paidBill.length > 0 && { color: "gray" },
+            { width: 220 },
+            item.lastMonthPaid >= month && { color: "gray" },
           ]}
         >
           {item.billName}
@@ -26,25 +35,13 @@ const HomePage = () => {
         <Text
           style={[
             styles.textBills,
-            { width: 60 },
-            paidBill.length > 0 && { color: "gray" },
+            { width: 100 },
+            item.lastMonthPaid >= month && { color: "gray" },
           ]}
         >
-          {item.dueDate}
-        </Text>
-        <Text
-          style={[
-            styles.textBills,
-            { width: 120 },
-            paidBill.length > 0 && { color: "gray" },
-          ]}
-        >
-          R$
-          {parseFloat(
-            paidBill.length > 0 ? paidBill[0].valuePaid : item.estimatedValue
-          )
-            .toFixed(2)
-            .replaceAll(".", ",")}
+          {item.due_day.toString().length > 1
+            ? item.due_day
+            : `0${item.due_day}`}
         </Text>
       </View>
     );
@@ -61,18 +58,19 @@ const HomePage = () => {
       </View>
       <View style={styles.containerBills}>
         <View style={styles.containerHeader}>
-          <Text style={[styles.headerText, { width: 170 }]}>Conta</Text>
-          <Text style={[styles.headerText, { width: 60 }]}>Dia</Text>
-          <Text style={[styles.headerText, { width: 120 }]}>Valor</Text>
+          <Text style={[styles.headerText, { width: 250, paddingLeft: 40 }]}>
+            Conta
+          </Text>
+          <Text style={[styles.headerText, { width: 100 }]}>Dia</Text>
         </View>
         <FlatList
-          data={BillsMocked}
+          data={bills}
           renderItem={renderItem}
           keyExtractor={(item: any) => item.id}
         />
         <View style={styles.containerTotal}>
-          <Text style={styles.totalText}>Total</Text>
-          <Text style={styles.totalText}>R$ 1000,00</Text>
+          <Text style={styles.totalText}>Total mesal</Text>
+          <Text style={styles.totalText}>0</Text>
         </View>
       </View>
     </View>

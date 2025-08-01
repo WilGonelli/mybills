@@ -1,4 +1,3 @@
-import { StyleSheet, Text, View } from "react-native";
 import Login from "../views/Login";
 import Signin from "../views/Signin";
 import HomePage from "../views/HomePage";

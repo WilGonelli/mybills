@@ -1,19 +1,23 @@
 export interface Bills {
   id: number;
   billName: string;
-  dueDate: number;
-  estimatedValue: number;
+  due_day: number;
+  type: "unique" | "recurring" | "fixed";
+  start_month: string;
+  end_month: string | null;
+  created_at: string;
 }
 
-export interface BillPaid {
+export interface Bills_instaces {
   id: number;
-  idBill: number;
-  paidDate: number;
-  paidMonth: number;
-  valuePaid: number;
+  bill_id: number;
+  due_date: string;
+  amount_paid: number | null;
+  paid: boolean;
+  paid_at: string | null;
 }
 
-export interface MonthNames {
+export interface Month_names {
   id: number;
   name: string;
 }
