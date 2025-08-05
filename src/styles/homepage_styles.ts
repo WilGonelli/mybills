@@ -34,8 +34,8 @@ export const styles = StyleSheet.create({
     color: "white",
   },
   containerBills: {
+    position: "relative",
     width: "100%",
-    justifyContent: "space-between",
     height: "80%",
     borderRadius: 18,
     padding: 12,
@@ -43,6 +43,7 @@ export const styles = StyleSheet.create({
   },
   containerHeader: {
     flexDirection: "row",
+    width: "100%",
   },
   headerText: {
     fontSize: 24,
@@ -56,6 +57,9 @@ export const styles = StyleSheet.create({
     padding: 6,
   },
   containerTotal: {
+    position: "absolute",
+    bottom: 0,
+    left: 10,
     width: "100%",
     height: 40,
     flexDirection: "row",
@@ -68,5 +72,24 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     paddingHorizontal: 12,
     fontWeight: "bold",
+  },
+  containerFlatList: {
+    maxHeight: "75%",
+    overflow: "scroll",
+  },
+  btnAddBill: {
+    backgroundColor: "#06df97ff",
+    width: 50,
+    height: 50,
+    borderRadius: "50%",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+  },
+  textBtn: {
+    color: "white",
+    fontSize: 48,
+    textAlign: "center",
+    marginTop: -10,
   },
 });
