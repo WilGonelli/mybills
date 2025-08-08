@@ -65,15 +65,15 @@ const HomePage = () => {
           keyExtractor={(item: any) => item.id}
           style={styles.containerFlatList}
         />
-        <View style={styles.btnAddBill}>
-          <TouchableOpacity>
-            <Text style={styles.textBtn}>+</Text>
-          </TouchableOpacity>
-        </View>
         <View style={styles.containerTotal}>
           <Text style={styles.totalText}>Total mesal</Text>
           <Text style={styles.totalText}>0</Text>
         </View>
+      </View>
+      <View style={styles.btnAddBill}>
+        <TouchableOpacity>
+          <Text style={styles.textBtn}>+</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

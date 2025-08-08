@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 36,
     paddingHorizontal: 12,
+    maxHeight: "100%",
     gap: 18,
   },
   homeTitle: {
@@ -36,7 +37,7 @@ export const styles = StyleSheet.create({
   containerBills: {
     position: "relative",
     width: "100%",
-    height: "80%",
+    height: "75%",
     borderRadius: 18,
     padding: 12,
     backgroundColor: "#769be0ff",
@@ -79,12 +80,13 @@ export const styles = StyleSheet.create({
   },
   btnAddBill: {
     backgroundColor: "#06df97ff",
-    width: 50,
+    width: "100%",
     height: 50,
-    borderRadius: "50%",
+    borderRadius: 24,
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+    marginBottom: 12,
   },
   textBtn: {
     color: "white",
